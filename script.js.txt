@@ -1,0 +1,35 @@
+// script.js
+const teacherList = document.getElementById("teacher-list");
+const teacherSelect = document.getElementById("teacher-select");
+
+// Replace this with your published CSV link
+const sheetURL = "https://docs.google.com/spreadsheets/d/e/2PACX-1vRkGazT4Sp-XnnPUa0gKoVyXCbkz746F1WaJLwdHqYD0BAwVLvrN0hjm39tZq9_ytgTGwneu5VZczrm/pubhtml";
+
+async function loadTeachers() {
+    const response = await fetch(sheetURL);
+    const data = await response.text();
+    const rows = data.split("\n").slice(1); // skip header
+    const teachers = rows.map(row => {
+        const [name, subject, slots, price, payment] = row.split(",");
+        return { name, subject, slots, price, payment };
+    });
+
+    teachers.forEach(teacher => {
+        // Show teacher card
+        const card = document.createElement("div");
+        card.className = "teacher-card";
+        card.innerHTML = `<h3>${teacher.name}</h3>
+                          <p>${teacher.subject}</p>
+                          <p>Slots: ${teacher.slots}</p>
+                          <p>Price: ${teacher.price}</p>`;
+        teacherList.appendChild(card);
+
+        // Add to dropdown
+        const option = document.createElement("option");
+        option.value = teacher.payment; // store payment link
+        option.textContent = teacher.name + " - " + teacher.subject;
+        teacherSelect.appendChild(option);
+    });
+}
+
+loadTeachers();

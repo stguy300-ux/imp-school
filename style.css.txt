@@ -1,0 +1,9 @@
+/* style.css */
+body { font-family: Arial, sans-serif; padding: 0; margin: 0; }
+header { background: #4CAF50; color: white; padding: 20px; text-align: center; }
+h2 { margin-top: 20px; text-align: center; }
+#teacher-list { display: flex; flex-wrap: wrap; justify-content: center; gap: 20px; margin: 20px; }
+.teacher-card { border: 1px solid #ccc; padding: 10px; width: 200px; text-align: center; }
+form { display: flex; flex-direction: column; max-width: 300px; margin: 0 auto; gap: 10px; }
+button { padding: 10px; background-color: #4CAF50; color: white; border: none; cursor: pointer; }
+button:hover { background-color: #45a049; }

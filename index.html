@@ -1,0 +1,40 @@
+<!-- index.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Tutoring App</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>School Tutoring</h1>
+    </header>
+
+    <main>
+        <section id="teachers">
+            <h2>Available Teachers</h2>
+            <div id="teacher-list"></div>
+        </section>
+
+        <section id="booking">
+            <h2>Book a Teacher</h2>
+            <form id="booking-form">
+                <label for="student-name">Your Name:</label>
+                <input type="text" id="student-name" required>
+
+                <label for="teacher-select">Select Teacher:</label>
+                <select id="teacher-select" required></select>
+
+                <label for="date">Select Date:</label>
+                <input type="date" id="date" required>
+
+                <button type="submit">Book & Pay</button>
+            </form>
+        </section>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
